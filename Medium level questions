@@ -1,4 +1,10 @@
 https://www.geeksforgeeks.org/problems/stock-buy-and-sell2615/0
+
+The cost of stock on each day is given in an array price[]. Each day you may decide to either buy or sell the stock i at price[i], you can even buy and sell the stock on the same day.
+Find the maximum profit that you can get.
+
+This is my solution with all the test case passed.
+
 // User function Template for Java
 class Solution {
     public int maximumProfit(int prices[]) {
