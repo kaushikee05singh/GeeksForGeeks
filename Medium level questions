@@ -1,0 +1,15 @@
+https://www.geeksforgeeks.org/problems/stock-buy-and-sell2615/0
+// User function Template for Java
+class Solution {
+    public int maximumProfit(int prices[]) {
+        // code here
+        int res =0;
+        int n =prices.length;
+        for(int i =1; i<n;i++){
+            if(prices[i] > prices[i-1]){
+                res += (prices[i]- prices[i-1]);
+            }
+        }
+        return res;
+    }
+}
