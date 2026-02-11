@@ -1,0 +1,33 @@
+https://www.geeksforgeeks.org/problems/first-and-last-occurrences-of-x3116/0
+
+Given a sorted array arr with possibly some duplicates, the task is to find the first and last occurrences of an element x in the given array.
+Note: If the number x is not found in the array then return both the indices as -1.
+
+This is my solution for this question with all the test cases passed.
+
+class Solution {
+    ArrayList<Integer> find(int arr[], int x) {
+        // code here
+        ArrayList<Integer> al = new ArrayList<>();
+       int res[]= new int[2];
+       res[0]=-1;
+       res[1]=-1;
+        for(int i=0; i<arr.length; i++){
+            if(arr[i]==x){
+                res[0]=i;
+                break;
+            }
+        }
+
+        for(int j=arr.length-1; j>=0; j--){
+               if(arr[j]==x){
+                   res[1]=j;
+                   break;
+               }
+        } 
+        for(int i=0; i<res.length; i++){
+            al.add(res[i]);
+        }
+        return al;
+    }
+}
