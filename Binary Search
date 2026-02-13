@@ -1,0 +1,32 @@
+https://www.geeksforgeeks.org/problems/binary-search-1587115620/0
+
+Given a sorted array arr[] and an integer k, find the position(0-based indexing) at which k is present in the array using binary search. 
+If k doesn't exist in arr[] return -1. 
+
+This is my solution for the given problem with all the test cases passed.
+
+class Solution {
+    public int binarysearch(int[] arr, int k) {
+        // Code Here
+        int low = 0 , high = arr.length-1;
+        int result = -1;
+        while (low <= high){
+            int mid = low + (high - low)/2;
+            
+            if(arr[mid] == k){
+            result= mid;
+            high = mid - 1;
+            }
+            
+            if(arr[mid] < k){
+            low = mid+1;
+            }
+            
+            else {
+            high = mid - 1;
+            }
+        
+    }
+    return result;
+    }
+}
