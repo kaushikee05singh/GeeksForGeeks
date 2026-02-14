@@ -1,0 +1,30 @@
+https://www.geeksforgeeks.org/problems/convert-sentence-to-camel-case/0
+
+Given a sentence s, your task is to remove all spaces and convert it to Camel Case.
+In Camel Case, words are joined without spaces, the first word keeps its original case, and each subsequent word starts with an uppercase letter.
+
+This is my solution for the given problem with all test case passed.
+
+// User function Template for Java
+
+class Solution {
+    // Function to convert the given string to Camel Case
+    public String convertToCamelCase(String s) {
+        // code here
+        StringBuilder res = new StringBuilder(); 
+        boolean cc = false;
+        for(int i =0; i<s.length(); i++){
+            if(s.charAt(i)==' '){
+             cc=true;   
+            }
+            else if(cc == true){
+            res.append(Character.toUpperCase(s.charAt(i)));
+            cc =false;
+            }
+            else{
+                res.append(s.charAt(i));
+            }
+        }
+        return res.toString();
+    }
+}
