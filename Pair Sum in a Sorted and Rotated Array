@@ -1,0 +1,30 @@
+https://www.geeksforgeeks.org/problems/pair-sum-in-a-sorted-and-rotated-array/0
+
+Given an array of positive elements arr[] that is sorted and then rotated around an unknown point, the task is to check if the array has a pair with sum equals to a given target.
+
+Below is my solution for the above questions with all 1112 / 1112 test case passed.
+
+
+class Solution {
+    static boolean pairInSortedRotated(int arr[], int target) {
+        // Your code here
+        Arrays.sort(arr);
+        boolean found=false;
+        int left = 0;
+        int right = arr.length-1;
+        while(left<right){
+            int sum = arr[left]+arr[right];
+            if(sum == target){
+                found=true;
+                break;
+            }
+            if(sum<target){
+                left++;
+            }
+            else{
+                right--;
+            }
+        }
+        return found;
+    }
+}
